@@ -32,24 +32,24 @@ const Carousel = () => {
 		});
 	};
 
-	const carouselClass = `carousel__item carousel__item--${current}`;
+	const carouselClass = `carousel-1__item carousel-1__item--${current}`;
 
 	return (
-		<section className='carousel'>
+		<>
 			<div className={carouselClass}></div>
 			<button
-				className='btn carousel__button carousel__button--previous'
+				className='btn carousel-1__button carousel-1__button--previous'
 				onClick={onPrevious}
 			>
-				<i class='fas fa-angle-left'></i>
+				<i className='fas fa-angle-left'></i>
 			</button>
 			<button
-				className='btn carousel__button carousel__button--next'
+				className='btn carousel-1__button carousel-1__button--next'
 				onClick={onNext}
 			>
-				<i class='fas fa-angle-right'></i>
+				<i className='fas fa-angle-right'></i>
 			</button>
-		</section>
+		</>
 	);
 };
 
