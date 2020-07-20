@@ -1,0 +1,186 @@
+.carousel--2 {
+	--default-height: 80%;
+	--default-width: 25%;
+	--level2-height: calc(var(--default-height) - 8%);
+	--level2-width: calc(var(--default-width) - 8%);
+	--level1-height: calc(var(--default-height) - 2%);
+	--level1-width: calc(var(--default-width) - 2%);
+	--level0-height: calc(var(--default-height) + 5%);
+	--level0-width: calc(var(--default-width) + 5%);
+	--level-2-left: 15%;
+	--level-1-left: 30%;
+	--level0-left: 50%;
+	--level1-left: 70%;
+	--level2-left: 85%;
+	--level-2-bs: -0.1em 0.1em 0.2em #212121;
+	--level-1-bs: -0.2em 0.2em 0.4em #212121;
+	--level2-bs: 0.1em 0.1em 0.2em #212121;
+	--level1-bs: 0.2em 0.2em 0.4em #212121;
+	--level0-bs: 0 0.4em 0.8em #212121;
+
+	background-color: #040404;
+	height: calc(100vh - 3rem);
+}
+
+.item {
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+
+	background-color: black;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%, -50%);
+	transition: box-shadow 1s, height 250ms, width 250ms, left 1s, margin-top 1s,
+		line-height 250ms, background-color 1s;
+
+	/* temp */
+	height: 100px;
+	width: 100px;
+	margin: 10px;
+
+	color: wheat;
+}
+
+.level-2 {
+	box-shadow: var(--level-2-bs);
+	height: var(--level2-height);
+	width: var(--level2-width);
+	line-height: var(--level2-height);
+	background-color: #228291;
+	left: var(--level-2-left);
+}
+
+.level-1 {
+	box-shadow: var(--level-1-bs);
+	height: var(--level1-height);
+	width: var(--level1-width);
+	line-height: var(--level1-height);
+	background-color: #6796e5;
+	left: var(--level-1-left);
+}
+
+.level0 {
+	box-shadow: var(--level0-bs);
+	height: var(--level0-height);
+	width: var(--level0-width);
+	line-height: var(--level0-height);
+	background-color: #4ec9e1;
+	left: var(--level0-left);
+}
+
+.level1 {
+	box-shadow: var(--level1-bs);
+	height: var(--level1-height);
+	width: var(--level1-width);
+	line-height: var(--level1-height);
+	background-color: #6796e5;
+	left: var(--level1-left);
+}
+
+.level2 {
+	box-shadow: var(--level2-bs);
+	height: var(--level2-height);
+	width: var(--level2-width);
+	line-height: var(--level2-height);
+	background-color: #228291;
+	left: var(--level2-left);
+}
+
+.level-2,
+.level2 {
+	z-index: 0;
+}
+
+.level-1,
+.level1 {
+	z-index: 1;
+}
+
+.level0 {
+	z-index: 2;
+}
+
+.left-enter {
+	opacity: 0;
+	left: var(--level2-left);
+	height: calc(var(--level2-height) - var(--default-height));
+	width: calc(var(--level2-width) - var(--default-width));
+	line-height: calc(var(--level2-height) - 30);
+}
+
+.left-enter.left-enter-active {
+	opacity: 1;
+	left: var(--level2-left);
+	height: var(--level2-height);
+	width: var(--level2-width);
+	line-height: var(--level2-height);
+	transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms,
+		margin-top 1s, line-height 1s;
+}
+
+.left-leave {
+	opacity: 1;
+	left: var(--level-2-left);
+	height: var(--level2-height);
+	width: var(--level2-width);
+	line-height: var(--level2-height);
+	z-index: -1;
+}
+
+.left-leave.left-leave-active {
+	z-index: -1;
+	left: var(--level-2-left);
+	opacity: 0;
+	height: calc(var(--level2-height) - var(--default-height));
+	width: calc(var(--level2-width) - var(--default-width));
+	line-height: 120px;
+	transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms,
+		margin-top 1s, line-height 1s;
+}
+
+.right-enter {
+	opacity: 0;
+	left: var(--level-2-left);
+	height: calc(var(--level2-height) - var(--default-height));
+	width: calc(var(--level2-width) - var(--default-width));
+	line-height: calc(var(--level2-height) - 30);
+}
+.right-enter.right-enter-active {
+	left: var(--level-2-left);
+	opacity: 1;
+	height: var(--level2-height);
+	line-height: var(--level2-height);
+	width: var(--level2-width);
+	transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms,
+		margin-top 1s, line-height 1s;
+}
+
+.right-leave {
+	left: var(--level2-left);
+	height: var(--level2-height);
+	opacity: 1;
+	line-height: var(--level2-height);
+	width: var(--level2-width);
+}
+
+.right-leave.right-leave-active {
+	left: var(--level2-left);
+	opacity: 0;
+	height: calc(var(--level2-height) - var(--default-height));
+	width: calc(var(--level2-width) - var(--default-width));
+	line-height: calc(var(--level2-height) - 30);
+	transition: box-shadow 1s, left 1s, opacity 1s, height 250ms, width 250ms,
+		margin-top 1s, line-height 1s;
+}
+
+.noselect {
+	-webkit-user-select: none;
+	-html-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
